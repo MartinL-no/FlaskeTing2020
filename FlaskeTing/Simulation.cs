@@ -1,4 +1,6 @@
-﻿namespace FlaskeTing
+﻿using System;
+
+namespace FlaskeTing
 {
     public class Simulation
     {
@@ -27,7 +29,7 @@
                 operationSet.RunAll();
                 if (IsSolved)
                 {
-                    operationSet.Show();
+                    Console.WriteLine(operationSet.GetDescription()); 
                     break;
                 }
                 numberOfOperations++;

@@ -63,13 +63,16 @@ namespace FlaskeTing
             return i != -1;
         }
 
-        public void Show()
+        public string GetDescription()
         {
+            var description = "";
             for (var i = 0; i < _operations.Length; i++)
             {
                 var operation = _operations[i];
-                Console.WriteLine((i + 1) + ": " + operationNames[operation]);
+                description += (i + 1) + ": " + operationNames[operation] + "\n";
             }
+
+            return description;
         }
 
         public void RunAll()
