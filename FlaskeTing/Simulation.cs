@@ -9,7 +9,7 @@ namespace FlaskeTing
         public Bottle Bottle2 { get; }
 
         public bool IsSolved => Bottle1.Content + Bottle2.Content == WantedVolume
-                             || Bottle1.Content == WantedVolume 
+                             || Bottle1.Content == WantedVolume
                              || Bottle2.Content == WantedVolume;
 
         public Simulation(int wantedVolume, int volumeBottle1, int volumeBottle2)
@@ -20,20 +20,18 @@ namespace FlaskeTing
         }
 
 
-        public void Run()
+        public OperationSet Run()
         {
             var numberOfOperations = 1;
-            while (true)
+            while (numberOfOperations < 20)
             {
                 var operationSet = new OperationSet(numberOfOperations, this);
                 operationSet.RunAll();
-                if (IsSolved)
-                {
-                    Console.WriteLine(operationSet.GetDescription()); 
-                    break;
-                }
+                if (IsSolved) return operationSet;
                 numberOfOperations++;
             }
+
+            return null;
         }
     }
 }

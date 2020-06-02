@@ -7,7 +7,8 @@ namespace FlaskeTing
         static void Main(string[] args)
         {
             var simulation = new Simulation(1, 5, 7);
-            simulation.Run();
+            var operationSet = simulation.Run();
+            Console.WriteLine(operationSet.GetDescription());
         }
     }
 }

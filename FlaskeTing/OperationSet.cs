@@ -6,6 +6,7 @@ namespace FlaskeTing
     {
         private readonly int[] _operations;
         private readonly Simulation _simulation;
+        public int Length => _operations.Length;
 
         private static string[] operationNames = new[]
         {
